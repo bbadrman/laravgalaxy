@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DemoController;
+use App\Http\Controllers\TargetController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,9 @@ Route::get('/', function () {
 
 
 Route::get('/demo_url', [DemoController::class, 'test']);
+
+Route::get('/', [TargetController::class, 'index']);
+
+Route::get('/create', [TargetController::class, 'create']);
+
+Route::get('/edit', [TargetController::class, 'edit']);
