@@ -78,3 +78,5 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 >>> $target->save();
 => true
+
+# Create-data-by-Factories : see url `https://www.youtube.com/watch?v=Opy6yBDTkhM`
