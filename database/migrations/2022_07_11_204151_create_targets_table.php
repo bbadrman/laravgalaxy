@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('targets', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('target', 300);
-            $table->integer('ranking');
+            $table->string('ranking', 11)->default('');
             $table->timestamps();
         });
     }
