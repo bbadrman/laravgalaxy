@@ -5,7 +5,7 @@
 <div class="container">
   <h2><center>To do list</center></h2>
   
-  <a href="#"><button type="button" class="btn btn-primary right action_create">Create</button></a>
+  <a href="/create"><button type="button" class="btn btn-primary right action_create">Create</button></a>
    
   <table class="table table-hover">
     <thead>

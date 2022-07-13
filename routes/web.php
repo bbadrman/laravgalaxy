@@ -26,4 +26,6 @@ Route::get('/', [TargetController::class, 'index']);
 
 Route::get('/create', [TargetController::class, 'create']);
 
+Route::post('/create', [TargetController::class, 'store']);
+
 Route::get('/edit', [TargetController::class, 'edit']);

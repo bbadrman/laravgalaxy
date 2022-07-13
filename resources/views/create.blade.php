@@ -7,7 +7,17 @@
 
   <div class="container">
 
-    <form action="/submit_create">
+    <form action="/create" method="POST">
+      {{ csrf_field() }}
+      @if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+      @endif
       
       <button type="submit" class="btn btn-primary right action_submit">Create</button>
 
