@@ -25,11 +25,11 @@
       
       <div class="form-group">
         <label for="usr">Target:</label>
-        <input type="text" class="form-control" id="usr" name="target">
+        <input type="text" class="form-control" id="usr" name="target"  placeholder="target">
       </div>
       <div class="form-group">
         <label for="pwd">Ranking:</label>
-        <input type="number" class="form-control" id="pwd" name="ranking">
+        <input type="number" class="form-control" id="pwd" name="ranking" placeholder="Ranking">
       </div>
       
     </form>

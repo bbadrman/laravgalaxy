@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Target;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TargetController extends Controller
 {
@@ -17,7 +18,7 @@ class TargetController extends Controller
         return view('create', compact('targets'));
     }
 
-    public function store(Request $request){
+    public function store(Target $targets, Request $request){
         //1.validate date
         $this->validate(request(), 
         [
@@ -30,10 +31,10 @@ class TargetController extends Controller
     ]);
        //2. insert the data in databases:
 
-        $post = new Target;
-        $post->target = $request->input('target');
-        $post->ranking = $request->input('ranking');
-        $post->save();
+        $targets = new Target;
+        $targets->target = $request->input('target');
+        $targets->ranking = $request->input('ranking');
+        $targets->save();
 
     //    Target::create
     //    ([
@@ -44,8 +45,17 @@ class TargetController extends Controller
        return redirect('/');
     }
 
-    public function edit() {  
+    public function edit(Target $target) {  
         $targets = Target::orderBy('ranking', 'DESC')->orderBy('created_at', 'DESC')->paginate(10);  
-        return view('edit', compact('targets'));
+        return view('edit', compact('targets', 'target'));
+    }
+
+    public function update(Request $request, $id){
+        
+        $v=$request->input('target');
+        DB::update('update targets set target=? where id=?',[ $v,$id]);
+
+    
+        return redirect('/');
     }
 } 
