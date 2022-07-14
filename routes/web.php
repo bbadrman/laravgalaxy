@@ -25,7 +25,7 @@ Route::get('/demo_url', [DemoController::class, 'test']);
 Route::get('/', [TargetController::class, 'index']);
 
 Route::get('/create', [TargetController::class, 'create']);
-
 Route::post('/create', [TargetController::class, 'store']);
 
-Route::get('/edit', [TargetController::class, 'edit']);
+Route::get('/edit/{target}', [TargetController::class, 'edit']);
+Route::put('/edit/{target}', [TargetController::class, 'update']);

@@ -7,7 +7,9 @@
 
   <div class="container">
 
-    <form action="/submit_edit">
+    <form action="/edit/{{$target->id}}" method="POST">
+      @method('PUT')
+      {{ csrf_field() }}
       
       <button type="submit" class="btn btn-primary right action_submit">update</button>
 
@@ -15,11 +17,11 @@
       
       <div class="form-group">
         <label for="usr">Target:</label>
-        <input type="text" class="form-control" id="usr" name="target">
+        <input type="text" class="form-control" id="usr" name="target" value="{{ $target->target }}">
       </div>
       <div class="form-group">
         <label for="pwd">Ranking:</label>
-        <input type="number" class="form-control" id="pwd" name="ranking">
+        <input type="number" class="form-control" id="pwd" name="ranking" value="{{ $target->ranking }}">
       </div>
       
     </form>
@@ -39,9 +41,9 @@
         <td>{{$target->target}}</td>
         <td>01{{$target->ranking}}</td>
         <td class="action_td">
-            <a href="#"><button type="button" class="btn btn-info">Edit</button></a>
-            <a href="#"><button type="button" class="btn btn-danger">Delete</button></a>
-        </td>
+          <a href="/edit/{{$target->id}}"><button type="button" class="btn btn-info">Edit</button></a>
+          <a href="#"><button type="button" class="btn btn-danger">Delete</button></a>
+      </td>
       </tr>
       @endforeach
   
