@@ -58,4 +58,8 @@ class TargetController extends Controller
     
         return redirect('/');
     }
+    public function delete(Target $target){
+        $target->delete();
+        return back();
+    }
 } 

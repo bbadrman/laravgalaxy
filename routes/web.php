@@ -29,3 +29,5 @@ Route::post('/create', [TargetController::class, 'store']);
 
 Route::get('/edit/{target}', [TargetController::class, 'edit']);
 Route::put('/edit/{target}', [TargetController::class, 'update']);
+
+Route::get('/delete/{target}', [TargetController::class, 'delete']);
