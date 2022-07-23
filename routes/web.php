@@ -31,3 +31,8 @@ Route::get('/edit/{target}', [TargetController::class, 'edit']);
 Route::put('/edit/{target}', [TargetController::class, 'update']);
 
 Route::get('/delete/{target}', [TargetController::class, 'delete']);
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
